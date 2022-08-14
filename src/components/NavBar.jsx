@@ -1,24 +1,42 @@
-import React from 'react'
-import { Navbar,Container,Nav } from 'react-bootstrap'
-
+import React, { useState } from 'react'
+import { Navbar, Container, Nav } from 'react-bootstrap'
+import navIcon1 from '../assets/images/pic4.svg';
+import navIcon2 from '../assets/images/pic5.svg';
+import navIcon3 from '../assets/images/pic6.svg';
+import Logo from '../assets/images/logo.svg'
 
 
 
 
 export const NavBar = () => {
-  return (
-    <Navbar  expand="lg">
-    <Container>
-      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
-         
-        </Nav>
-      </Navbar.Collapse>
-    </Container>
-  </Navbar>
-  )
+    const [activeLink, setActiveLink] = useState('home')
+    return (
+        <Navbar expand="lg" bg="dark">
+            <Container>
+                <Navbar.Brand href="#home">
+                    <img src={Logo} alt='logo' />
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" >
+                    <span className="navbar-toggler-icon"></span>
+                </Navbar.Toggle>
+                <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Nav.Link href="#skills">Skills</Nav.Link>
+                        <Nav.Link href="#projects">Projects</Nav.Link>
+                    </Nav>
+                    <span className='navbar-text'>
+                        <div className="social-icon">
+                            <a href="#"><img src={navIcon1} alt="" /></a>
+                            <a href="#"><img src={navIcon2} alt="" /></a>
+                            <a href="#"><img src={navIcon3} alt="" /></a>
+                            <button className='vvd' onClick={() => console.log('contact us')}>
+                                <span>Let's connect</span>
+                            </button>
+                        </div>
+                    </span>
+                </Navbar.Collapse>
+            </Container>
+        </Navbar>
+    )
 }
