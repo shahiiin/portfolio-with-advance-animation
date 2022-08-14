@@ -17,7 +17,7 @@ const Project = () => {
             description: "Design & Development",
             imgUrl: projImg1,
         },
-      
+
         {
             title: "Business Startup",
             description: "Design & Development",
