@@ -9,6 +9,7 @@ import Logo from '../assets/images/logo.svg'
 
 
 export const NavBar = () => {
+    
     const [activeLink, setActiveLink] = useState('home')
     const [scrolled, setScrolled] = useState(false);
 
